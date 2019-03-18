@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+    <title>Ledstrip control</title>
+</head>
+<body>
+    <header class="header">
+        <div class="topnav" id="myTopnav">
+            <a href="{{ url_for('home')}}" class="active">Home</a>
+            <a href="{{ url_for('modes')}}">Modes</a>
+            <a href="{{ url_for('contact')}}">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+    <div class="page">
+        <div class="title__box">
+            <h1>Ledstrip Controller</h1>
+            <p>Select a color and set a brightness level then click on "Turn on ledstrip"</p>
+        </div>
+        
+        <form id="submitcolor" method="post">
+            <div class="colorpalette__box">
+                <input type="color" name="favcolor" value="#000000" class="colorPalette">
+            </div>
+
+            <div class="brigthnessSlider__box">
+                    <p>Set brightness: <span id="sliderValue"></span></p>
+                        <input type="range" min="0" max="255" value="127" class="slider" id="brigthnessSlider_id" name="brigthnessSlider">
+                        <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="495.083px" height="495.083px" viewBox="0 0 495.083 495.083" style="enable-background:new 0 0 495.083 495.083;"
+                        xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M247.542,119.733c-68.476,0-124.188,55.704-124.188,124.179c0,68.473,55.712,124.173,124.188,124.173
+                                        c68.479,0,124.179-55.706,124.179-124.173C371.721,175.437,316.021,119.733,247.542,119.733z"/>
+                                    <path d="M247.542,116.463c8.824,0,15.997-7.176,15.997-15.994V16.006c0-8.821-7.173-16.002-15.997-16.002
+                                        s-16.006,7.182-16.006,16.002v84.464C231.536,109.288,238.718,116.463,247.542,116.463z"/>
+                                    <path d="M247.542,378.617c-8.824,0-16.006,7.182-16.006,16.01v84.451c0,8.82,7.182,16.002,16.006,16.002
+                                        s15.997-7.182,15.997-16.002v-84.451C263.538,385.799,256.372,378.617,247.542,378.617z"/>
+                                    <path d="M132.231,154.861c3.018,3.026,7.041,4.687,11.319,4.687c4.275,0,8.289-1.66,11.316-4.693
+                                        c6.245-6.245,6.233-16.393,0-22.626l-59.733-59.73c-3.023-3.014-7.041-4.675-11.313-4.675s-8.29,1.661-11.307,4.687
+                                        c-3.026,3.011-4.699,7.041-4.699,11.313c0,4.267,1.672,8.29,4.699,11.319L132.231,154.861z"/>
+                                    <path d="M362.846,340.229c-3.026-3.025-7.038-4.689-11.301-4.689c-4.275,0-8.287,1.664-11.313,4.689
+                                        c-3.032,3.033-4.695,7.044-4.695,11.332c0.012,4.275,1.681,8.286,4.689,11.301l59.724,59.724
+                                        c3.032,3.021,7.056,4.695,11.319,4.695c4.275,0,8.286-1.675,11.312-4.695c3.026-3.015,4.684-7.038,4.684-11.313
+                                        s-1.65-8.286-4.684-11.318L362.846,340.229z"/>
+                                    <path d="M116.466,247.551c0-8.824-7.182-16.006-16.006-16.006H16.012C7.188,231.545,0,238.727,0,247.551
+                                        c0,8.821,7.188,16.003,16.012,16.003h84.448C109.284,263.554,116.466,256.372,116.466,247.551z"/>
+                                    <path d="M479.087,231.545h-84.47c-8.821,0-16.003,7.182-16.003,16.006c0,8.821,7.182,16.003,16.003,16.003h84.457
+                                        c8.827,0,16.009-7.182,16.009-16.003C495.089,238.727,487.907,231.545,479.087,231.545z"/>
+                                    <path d="M143.544,335.551c-4.266,0-8.29,1.658-11.319,4.685l-59.724,59.724c-3.026,3.026-4.687,7.049-4.687,11.331
+                                        c0.006,4.281,1.678,8.292,4.687,11.301c3.029,3.021,7.046,4.689,11.319,4.689s8.29-1.669,11.319-4.689l59.712-59.724
+                                        c3.026-3.009,4.687-7.044,4.687-11.307c0-4.275-1.654-8.287-4.687-11.319C151.84,337.209,147.82,335.551,143.544,335.551z"/>
+                                    <path d="M351.545,159.542c4.287,0,8.322-1.673,11.318-4.687l59.724-59.724c3.027-3.033,4.69-7.053,4.69-11.331
+                                        c0-4.282-1.676-8.29-4.69-11.301c-3.02-3.026-7.037-4.687-11.312-4.687c-4.27,0-8.293,1.66-11.307,4.687l-59.725,59.712
+                                        c-3.02,3.023-4.695,7.035-4.695,11.313c0,4.279,1.676,8.302,4.689,11.319C343.246,157.875,347.257,159.542,351.545,159.542z"/>
+                                </g>
+                            </g>
+                        </svg>   
+            </div>
+
+            <div class="button__box">
+                <a href="javascript: submitform()" class="btn btn--white btn--animated" onclick="">Turn on ledstrip</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function submitform()
+        {
+            document.forms["submitcolor"].submit();
+        }
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    
+    <script>
+        var slider = document.getElementById("brigthnessSlider_id");
+        var output = document.getElementById("sliderValue");
+        output.innerHTML = slider.value; // Display the default slider value
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+    </script>
+</body>
+</html>
