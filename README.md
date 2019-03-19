@@ -46,7 +46,7 @@ As this is just a python wrapper for the library you must first follow the build
 
 If you are rebuilding after fetching some updated commits, you might need to remove the build directory first
 
-*rm -rf ./build
+* rm -rf ./build
 
 Install
 If you want to install the library (in a virtualenv or in the system), so that you can import neopixel from anywhere, you need to run:
